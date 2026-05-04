@@ -47,28 +47,6 @@ namespace MVC.Model
         }
 
         /// <summary>
-        /// Возвращает магазин по индексу
-        /// </summary>
-        /// <param name="index">Индекс</param>
-        /// <returns>Магазин или null, если индекс вне диапазона</returns>
-        public InternetShop? GetAt(int index)
-        {
-            if (index >= 0 && index < shops.Count)
-            {
-                return shops[index];
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// Возвращает количество магазинов в коллекции
-        /// </summary>
-        public int Count()
-        {
-            return shops.Count;
-        }
-
-        /// <summary>
         /// Возвращает копию списка всех магазинов
         /// </summary>
         /// <returns>Новый список, содержащий все магазины</returns>
