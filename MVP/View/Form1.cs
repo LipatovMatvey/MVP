@@ -1,9 +1,10 @@
+using Laba3_oop;
+using LABA7_OOP.Model;
+using MVP.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using LABA7_OOP.Model;
-using MVP.View;
 
 namespace MVP
 {
@@ -79,10 +80,9 @@ namespace MVP
 
         public void ShowMessage(string message, bool isError = false)
         {
-            MessageBox.Show(message,
-                isError ? "Ошибка" : "Информация",
-                MessageBoxButtons.OK,
-                isError ? MessageBoxIcon.Error : MessageBoxIcon.Information);
+            uint type = isError ? BoxMessage.ErrorCode : BoxMessage.InfoCode;
+            string ErrorType = isError ? "Ошибка" : "Информация";
+            BoxMessage.ShowNativeMessageBox(ErrorType, message, type);
         }
 
         public void ShowShops(IEnumerable<InternetShop> shops)
